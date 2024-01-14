@@ -8,8 +8,8 @@
   <p class="title">CEO</p>
   <p>Email: {{userReferral?.user?.email}}</p>
   <p>Date of birth: {{userReferral?.user?.dateOfBirth}}</p>
-  <p>How did you hear about us?: {{userReferral?.user?.whoRefferEnum?.toUpperCase()}}</p>
   <p>Points: {{userReferral?.user?.points}}</p>
+  <p>How did you hear about us?: {{userReferral?.user?.whoRefferEnum?.toUpperCase()}}</p>
   <div *ngIf="userReferral?.user?.whoRefferEnum === 'user'">
     <a routerLink="/users/{{userReferral?.user?.refereeUsers![0].referredUser.id}}" (click)="reload(userReferral?.user?.refereeUsers![0].referredUser.id)">
         {{userReferral?.user?.refereeUsers![0].referredUser.username}}

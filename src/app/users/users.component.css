@@ -198,3 +198,10 @@ a {
 .list-unstyled {
     list-style: none;
 }
+
+.sign-out {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    cursor: pointer;
+}

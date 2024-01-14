@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataServices } from '../data.service';
 import { User } from '../../types';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -10,7 +11,8 @@ import { User } from '../../types';
 export class UsersComponent implements OnInit {
 
   constructor(
-    private dataService: DataServices
+    private dataService: DataServices,
+    private router: Router
   ) {}
 
   users: User[] | null = null
@@ -35,6 +37,11 @@ export class UsersComponent implements OnInit {
       console.log(err)
       this.errors?.push('An error occurred');
     }
+  }
+
+  signOut() {
+    window.localStorage.removeItem('user')
+    this.router.navigate([''])
   }
 
 }
